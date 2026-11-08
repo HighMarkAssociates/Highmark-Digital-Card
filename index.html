@@ -116,7 +116,7 @@
       Social links: paste the full public profile URLs.
     */
     const CARD = {
-      address: "Shop # LG-1, Islamabad Business Square, Sector E-11/2, Markaz, Islamabad, Pakistan",
+      address: "Ghafar Heights, Street No. 45, Services Society SCHS, E-11/2, Islamabad, 44000",
       whatsapp: "923XXXXXXXXX",
       instagram: "https://www.instagram.com/YOUR_USERNAME/",
       facebook: "https://www.facebook.com/YOUR_PAGE/"
@@ -131,8 +131,7 @@ const activeWhatsApp = /^\d{10,15}$/.test(qrNumber)
     const mapQuery = encodeURIComponent(CARD.address);
     document.getElementById("office-address").textContent = CARD.address;
     document.getElementById("map-frame").src = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-    document.getElementById("maps-link").href = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
-
+    document.getElementById("map-link").href = "https://maps.app.goo.gl/iQAdp7ZY6REXpi6L6";
     const contacts = [
       {
         name: "WhatsApp", detail: "Chat with our office", href: `https://wa.me/${activeWhatsApp}`,
