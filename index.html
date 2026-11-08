@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111714">
+  <meta name="description" content="High Mark Associates — Your Trusted Partner in Real Estate. Islamabad, Pakistan.">
+  <title>High Mark Associates | Digital Card</title>
+  <style>
+    :root {
+      --bg: #101512;
+      --panel: #171f1a;
+      --panel-2: #1c2821;
+      --line: rgba(222, 229, 214, .14);
+      --text: #f0f0e8;
+      --muted: #aab5a8;
+      --gold: #c9ad68;
+      --sage: #aebda9;
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--text);
+      background:
+        radial-gradient(ellipse at 50% -15%, rgba(115,143,112,.18), transparent 48%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(100% - 36px, 480px); margin: 0 auto; padding: 34px 0 28px; }
+    .brand { text-align: center; padding: 22px 12px 27px; }
+    .logo {
+      width: 116px; height: 116px; object-fit: cover; display: block; margin: 0 auto 20px;
+      border-radius: 25px; border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 14px 40px rgba(0,0,0,.28);
+    }
+    .eyebrow { color: var(--gold); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; font-weight: 700; }
+    h1 { margin: 10px 0 8px; font-size: clamp(25px, 7vw, 32px); letter-spacing: .045em; font-weight: 600; }
+    .tagline { margin: 0; color: #c4cdc1; font-size: 14px; line-height: 1.6; }
+    .rule { height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); margin: 7px 0 25px; }
+    .section-label { margin: 0 0 12px 3px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+    .location {
+      overflow: hidden; background: var(--panel); border: 1px solid var(--line);
+      border-radius: var(--radius); margin-bottom: 25px;
+    }
+    .map { display:block; width:100%; height:190px; border:0; filter: saturate(.72) contrast(.92); }
+    .address { display:flex; align-items:flex-start; gap:12px; padding:17px 17px 15px; }
+    .pin { width:34px; height:34px; flex:0 0 34px; display:grid; place-items:center; color:var(--gold); background:rgba(201,173,104,.1); border-radius:11px; }
+    .address strong { display:block; font-size:14px; font-weight:600; margin:1px 0 5px; }
+    .address p { margin:0; color:var(--muted); font-size:12px; line-height:1.55; }
+    .map-link { display:flex; justify-content:space-between; align-items:center; padding:13px 17px; border-top:1px solid var(--line); color:var(--sage); font-size:12px; font-weight:600; }
+    .links { display:grid; gap:10px; }
+    .link-card {
+      display:flex; align-items:center; gap:14px; padding:15px 16px; min-height:70px;
+      border:1px solid var(--line); border-radius:16px; background:rgba(27,37,31,.78);
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .link-card:hover { border-color:rgba(201,173,104,.55); background:var(--panel-2); transform:translateY(-1px); }
+    .link-icon { width:39px; height:39px; flex:0 0 39px; display:grid; place-items:center; border-radius:12px; color:var(--gold); background:rgba(201,173,104,.1); }
+    .link-copy { flex:1; min-width:0; }
+    .link-copy strong { display:block; font-size:14px; font-weight:600; }
+    .link-copy span { display:block; margin-top:4px; color:var(--muted); font-size:11px; }
+    .arrow { color:#879588; font-size:21px; line-height:1; }
+    .footer { padding:28px 0 5px; text-align:center; color:#738075; font-size:10px; letter-spacing:.12em; }
+    .footer span { display:block; margin-top:7px; color:#566259; font-size:9px; letter-spacing:.06em; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="brand">
+      <img class="logo" src="assets/highmark-logo.png" alt="High Mark Associates logo">
+      <div class="eyebrow">Islamabad · Pakistan</div>
+      <h1>HIGH MARK ASSOCIATES</h1>
+      <p class="tagline">Your Trusted Partner in Real Estate</p>
+    </header>
+
+    <div class="rule"></div>
+
+    <section aria-labelledby="location-title">
+      <h2 class="section-label" id="location-title">Find our office</h2>
+      <div class="location">
+        <iframe class="map" id="map-frame" title="High Mark Associates office map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="address">
+          <div class="pin" aria-hidden="true">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </div>
+          <div>
+            <strong>Visit our office</strong>
+            <p id="office-address"></p>
+          </div>
+        </div>
+        <a class="map-link" id="maps-link" target="_blank" rel="noopener">
+          <span>Open directions in Google Maps</span><span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="connect-title">
+      <h2 class="section-label" id="connect-title">Connect with us</h2>
+      <div class="links" id="contact-links"></div>
+    </section>
+
+    <footer class="footer">
+      HIGH MARK ASSOCIATES
+      <span>REAL ESTATE · ISLAMABAD</span>
+    </footer>
+  </main>
+
+  <script>
+    /*
+      EDIT THESE DETAILS before publishing:
+      WhatsApp: country code + number, digits only, e.g. 923001234567
+      Social links: paste the full public profile URLs.
+    */
+    const CARD = {
+      address: "Shop # LG-1, Islamabad Business Square, Sector E-11/2, Markaz, Islamabad, Pakistan",
+      whatsapp: "923XXXXXXXXX",
+      instagram: "https://www.instagram.com/YOUR_USERNAME/",
+      facebook: "https://www.facebook.com/YOUR_PAGE/"
+    };
+    const params = new URLSearchParams(window.location.search);
+const qrNumber = (params.get("wa") || "").replace(/\D/g, "");
+
+const activeWhatsApp = /^\d{10,15}$/.test(qrNumber)
+  ? qrNumber
+  : CARD.whatsapp;
+
+    const mapQuery = encodeURIComponent(CARD.address);
+    document.getElementById("office-address").textContent = CARD.address;
+    document.getElementById("map-frame").src = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+    document.getElementById("maps-link").href = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+
+    const contacts = [
+      {
+        name: "WhatsApp", detail: "Chat with our office", href: `https://wa.me/${activeWhatsApp}`,
+        icon: '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.6A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.5 8.5c.5 2.5 2.5 4.5 5 5l1.2-1.2 2 1c-.3 1.4-1.3 2-2.5 1.8-3.5-.7-6.2-3.4-6.9-6.9-.2-1.2.4-2.2 1.8-2.5l1 2-1.6.8Z"/></svg>'
+      },
+      {
+        name: "Instagram", detail: "Follow our property updates", href: CARD.instagram,
+        icon: '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>'
+      },
+      {
+        name: "Facebook", detail: "Connect with High Mark", href: CARD.facebook,
+        icon: '<svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H7.2V13H10v8h3.4Z"/></svg>'
+      }
+    ];
+
+    const holder = document.getElementById("contact-links");
+    contacts.forEach(item => {
+      const a = document.createElement("a");
+      a.className = "link-card";
+      a.href = item.href;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.innerHTML = `<span class="link-icon" aria-hidden="true">${item.icon}</span>
+        <span class="link-copy"><strong>${item.name}</strong><span>${item.detail}</span></span>
+        <span class="arrow" aria-hidden="true">↗</span>`;
+      holder.appendChild(a);
+    });
+  </script>
+</body>
+</html>
